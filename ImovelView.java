@@ -64,13 +64,13 @@ public class ImovelView {
         System.out.println("Proprietários: ");
         List<String> proprietarios = new ArrayList<>(Arrays.asList(scanner.nextLine().split(",")));
         System.out.println("Tipo de Imóvel (casa, apartamento, terreno): ");
-        String tipoImovel = scanner.nextLine();
+        String categoriaDoImovel = scanner.nextLine();
         System.out.println("Valor Venal: ");
         double valorVenal = Double.parseDouble(scanner.nextLine());
         System.out.println("Área em m²: ");
         double area = Double.parseDouble(scanner.nextLine());
 
-        Imovel imovel = new Imovel(matricula, proprietarios, tipoImovel, valorVenal, area);
+        Imovel imovel = new Imovel(matricula, proprietarios, categoriaDoImovel, valorVenal, area);
         controller.cadastro(imovel);
         System.out.println("Imóvel cadastrado com sucesso!\n____________________________");
     }
@@ -82,7 +82,7 @@ public class ImovelView {
         } else {
             imoveis.forEach(imovel -> {
                 System.out.println("Matrícula: " + imovel.getMatricula() + 
-                                   ", Tipo: " + imovel.getTipoImovel() + 
+                                   ", Tipo: " + imovel.getcategoriaDoImovel() + 
                                    ", Valor Venal: " + imovel.getValorVenal() + 
                                    ", Área: " + imovel.getArea());
             });
@@ -96,7 +96,7 @@ public class ImovelView {
         if (imovelOpt.isPresent()) {
             Imovel imovel = imovelOpt.get();
             System.out.println("Matrícula: " + imovel.getMatricula() + 
-                               ", Tipo: " + imovel.getTipoImovel() + 
+                               ", Tipo: " + imovel.getcategoriaDoImovel() + 
                                ", Valor Venal: " + imovel.getValorVenal() + 
                                ", Área: " + imovel.getArea());
         } else {
@@ -139,8 +139,8 @@ public class ImovelView {
 
     private void ValorTotalTipo() {
         System.out.println("Tipo de Imóvel (casa, apartamento, terreno): ");
-        String tipoImovel = scanner.nextLine();
-        double total = controller.calcularTudo(tipoImovel);
-        System.out.println("Valor total dos imóveis do tipo " + tipoImovel + ": " + total);
+        String categoriaDoImovel = scanner.nextLine();
+        double total = controller.calcularTudo(categoriaDoImovel);
+        System.out.println("Valor total dos imóveis do tipo " + categoriaDoImovel + ": " + total);
     }
 }

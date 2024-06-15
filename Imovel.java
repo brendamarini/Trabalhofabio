@@ -1,18 +1,19 @@
 import java.util.List;
 
 public class Imovel {
-    private String matricula;
-    private List<String> proprietarios;
-    private String tipoImovel;
-    private double valorVenal;
-    private double area;
 
-    public Imovel(String matricula, List<String> proprietarios, String tipoImovel, double valorVenal, double area) {
+    private String matricula;
+    private double valorVenal;
+    private String categoriaDoImovel;
+    private double area;
+    private List<String> proprietarios;
+
+    public Imovel(String matricula, double valorVenal, String categoriaDoImovel, double areaList<String> proprietarios) {
         this.matricula = matricula;
-        this.proprietarios = proprietarios;
-        this.tipoImovel = tipoImovel;
+        this.tipoImovel = categoriaDoImovelImovel;
         this.valorVenal = valorVenal;
         this.area = area;
+        this.proprietarios = proprietarios;
     }
 
     public String getMatricula() {
@@ -35,8 +36,8 @@ public class Imovel {
         return tipoImovel;
     }
 
-    public void setTipoImovel(String tipoImovel) {
-        this.tipoImovel = tipoImovel;
+    public void setcategoriaDoImovel(String tipoImovel) {
+        this.categoriaDoImovel = categoriaDoImovel;
     }
 
     public double getValorVenal() {

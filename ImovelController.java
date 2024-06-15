@@ -22,9 +22,9 @@ public class ImovelController {
     public void remover(String matricula) {
         imoveis.removeIf(imovel -> imovel.getMatricula().equals(matricula));
     }
-    public double calcularTudo(String tipoImovel) {
+    public double calcularTudo(String categoiriaDoImovelImovel) {
         return imoveis.stream()
-                .filter(imovel -> imovel.getTipoImovel().equals(tipoImovel))
+                .filter(imovel -> imovel.getcategoriaDoImovel().equals(categoiriaDoImovel))
                 .mapToDouble(Imovel::getValorVenal)
                 .sum();
     }
